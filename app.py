@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', message="Python練習")
 
-@app.route('/result', methods=["GET"])
+@app.route('/result.html', methods=["GET"])
 def result_get():
     year = request.args.get("year","")
     corse = request.args.get("corse","")
