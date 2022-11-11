@@ -1,41 +1,77 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="jp">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <title>test_flask</title>
 </head>
-<body>
-  <div>
-		<input type="date" name="test">
-	</div>
-  <div>
-  <label for="corse">開催場所</label>
-  <select name="corse">
-  <option value="">選択してください</option>
-  <option value="東京">東京</option>
-  <option value="中山">中山</option>
-  <option value="阪神">阪神</option>
-  <option value="中京">中京</option>
-  </select>
-</div>
-<div>
-  <label for="race">レース数</label>
-  <select name="race">
-  <option value="">選択してください</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-  <option value="10">10</option>
-  <option value="11">11</option>
-  <option value="12">12</option>
-  </select>
-</div>
+<body >
+    <form action='/result'>
+        <p>{{message}}</p>
+      </head>
+      <body>
+            <form action='/result'>
+              <div>
+                <label for="year">西暦</label>
+                <select name="year">
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                </select>
+              </div>
+              <div>
+                <label for="corse">開催場所</label>
+                <select name="corse">
+                <option value="01">札幌</option>
+                <option value="02">函館</option>
+                <option value="03">福島</option>
+                <option value="04">新潟</option>
+                <option value="05">東京</option>
+                <option value="06">中山</option>
+                <option value="07">中京</option>
+                <option value="08">京都</option>
+                <option value="09">阪神</option>
+                <option value="10">小倉</option>
+                </select>
+              </div>
+              <div>
+                <label for="number">開催回数</label>
+                <select name="number">
+                <option value="01">1回</option>
+                <option value="02">2回</option>
+                <option value="03">3回</option>
+                <option value="04">4回</option>
+                <option value="05">5回</option>
+                </select>
+              </div>
+              <div>
+                <label for="day">日数</label>
+                <select name="day">
+                <option value="01">1日目</option>
+                <option value="02">2日目</option>
+                <option value="03">3日目</option>
+                <option value="04">4日目</option>
+                <option value="05">5日目</option>
+                </select>
+              </div>
+              <div>
+                <label for="race">レース数</label>
+                <select name="race">
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                </select>
+              </div>
+
+        <button type="submit" formmethod="GET">計算</button>
+    </form>
 </body>
 </html>
