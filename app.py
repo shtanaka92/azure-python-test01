@@ -1,9 +1,3 @@
-from flask import Flask, render_template,request
-import requests
-from datetime import datetime
-import re
-import pandas as pd
-from bs4 import BeautifulSoup
 name = []
 odds = []
 
