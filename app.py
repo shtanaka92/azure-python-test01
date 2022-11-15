@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', message="Python練習")
+    return render_template('index.html', message="Python練習1")
 
 @app.route('/result', methods=["GET"])
 def result_get():
