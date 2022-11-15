@@ -1,6 +1,6 @@
 Flask
 pandas
 requests
-beautifulsoup
+beautifulsoup4
 datetime
 re
