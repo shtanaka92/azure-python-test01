@@ -22,7 +22,7 @@ def result_get():
     race = request.args.get("race","")
     url = 'https://db.netkeiba.com/race/'+ year + corse + number + day + race
     r = requests.get(url)
-    soup = BeautifulSoup(r.content,'lxml')
+    soup = BeautifulSoup(r.content,'html.parser')
     t = datetime.now().strftime("%Y/%m/%d %H:%M")
 
     for i in soup.find_all(href=re.compile("/horse/")):
