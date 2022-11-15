@@ -1,12 +1,17 @@
+from flask import Flask, render_template,request
+import requests
+from datetime import datetime
+import re
+import pandas as pd
+from bs4 import BeautifulSoup
 name = []
 odds = []
-
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', message="Python練習1")
+    return render_template('index.html', message="Python練習")
 
 @app.route('/result', methods=["GET"])
 def result_get():
