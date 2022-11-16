@@ -4,6 +4,10 @@ from datetime import datetime
 import re
 import pandas as pd
 from bs4 import BeautifulSoup
+import lxml
+from bs4 import BeautifulSoup
+from selenium import webdriver
+import chromedriver_binary
 name = []
 odds = []
 
@@ -21,19 +25,13 @@ def result_get():
     day = request.args.get("day","")
     race = request.args.get("race","")
     url = 'https://db.netkeiba.com/race/'+ year + corse + number + day + race
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content,'html.parser')
-    t = datetime.now().strftime("%Y/%m/%d %H:%M")
+driver = webdriver.Chrome()
+driver.get(url)
+html = driver.page_source
+soup = BeautifulSoup(html, 'lxml')
+found = soup.select('td')
 
-    for i in soup.find_all(href=re.compile("/horse/")):
-        name.append(i.string)
-
-    for o in soup.find_all(class_="txt_r",nowrap="nowrap")[3::5]:
-        odds.append(o.string)
-
-    df = pd.DataFrame({"name":name,t:odds})
-
-    return render_template('result.html', message = df)
+    return render_template('result.html', message = found)
 
 if __name__ == '__main__':
     app.debug = False
