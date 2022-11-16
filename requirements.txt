@@ -2,7 +2,6 @@ Flask
 pandas
 requests
 beautifulsoup4
-datetime
 lxml
 chromedriver_binary
 webdriver
