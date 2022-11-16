@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', message="Python練習")
+    return render_template('index.html', message="Python練習1")
 
 @app.route('/result', methods=["GET"])
 def result_get():
@@ -25,11 +25,11 @@ def result_get():
     day = request.args.get("day","")
     race = request.args.get("race","")
     url = 'https://db.netkeiba.com/race/'+ year + corse + number + day + race
-driver = webdriver.Chrome()
-driver.get(url)
-html = driver.page_source
-soup = BeautifulSoup(html, 'lxml')
-found = soup.select('td')
+    driver = webdriver.Chrome()
+    driver.get(url)
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'lxml')
+    found = soup.select('td')
 
     return render_template('result.html', message = found)
 
