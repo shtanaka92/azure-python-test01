@@ -31,7 +31,7 @@ def result_get():
     soup = BeautifulSoup(html, 'lxml')
     found = soup.select('td')
 
-    return render_template('result.html', message = found)
+    return render_template('result.html', message = 'message')
 
 if __name__ == '__main__':
     app.debug = False
